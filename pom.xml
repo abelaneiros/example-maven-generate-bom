@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>example.parent</groupId>
+    <artifactId>abelaneiros-example</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <java-version>17</java-version>
+        <maven.compiler.source>${java-version}</maven.compiler.source>
+        <maven.compiler.target>${java-version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aws.java.sdk-version>2.27.9</aws.java.sdk-version>
+        <org.slf4j.api-version>2.0.16</org.slf4j.api-version>
+        <org.apache.logging.log4j-version>2.24.1</org.apache.logging.log4j-version>
+        <org.codehaus.mojo.flatten.maven.plugin-version>1.5.0</org.codehaus.mojo.flatten.maven.plugin-version>
+    </properties>
+
+    <modules>
+        <module>abelaneiros-bom</module>
+        <module>abelaneiros-common</module>
+        <module>abelaneiros-secretsmanager</module>
+        <module>abelaneiros-ssm</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${aws.java.sdk-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
