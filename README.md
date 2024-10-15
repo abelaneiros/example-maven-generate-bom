@@ -14,7 +14,16 @@ And a BOM module that only contains the pom.xml file with the dependencies of th
 
 ## Usage
 
-In your pom.xml add first the BOM as a dependency management:
+1. Clone this project:
+```bash
+git clone https://github.com/abelaneiros/maven-generate-bom.git
+```
+2. Build this project:
+```bash
+mvn clean install
+```
+
+3. In your project pom.xml add first the BOM as a dependency management:
 
 ```xml
 <dependencyManagement>
@@ -30,7 +39,7 @@ In your pom.xml add first the BOM as a dependency management:
 </dependencyManagement>  
 ```
 
-Then the required artifacts as dependencies:
+4. Then the required artifacts as dependencies:
 
 ```xml
 <dependencies>
